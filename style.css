@@ -2,10 +2,8 @@ body {
   background-color:black;
   display: flex;
 }
-#login-container {
+#login-reg-container {
   margin: auto;
-  width: 20vw;
-  height: 40vh;
   padding: 1vw;
   background-color: #333333;
   border-radius: 2vw;
@@ -16,6 +14,16 @@ body {
   position: absolute;
   transform: translate(50%, -50%);
 }
+.login{
+  width: 20vw;
+  height:35vh;
+}
+.registeren{
+  width: 20vw;
+  height: 50vh;
+}
+
+
 
 input[type=text], input[type=password] {
   width: 100%;
@@ -66,4 +74,12 @@ input[type=text], input[type=password] {
 #text{
   color: white;
 }
-
+.link{
+  color: rgb(0, 0, 255);
+  text-decoration: none;
+  -webkit-text-stroke: 0.03vw rgb(6, 0, 69);
+}
+.tekst-link{
+  color: white;
+  text-align: center;
+}
