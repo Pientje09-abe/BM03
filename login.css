@@ -5,10 +5,10 @@ body {
 #login-container {
   margin: auto;
   width: 20vw;
-  height: 60vh;
-  padding: 2vw;
+  height: 40vh;
+  padding: 1vw;
   background-color: #333333;
-  border-radius: 0.5vw;
+  border-radius: 2vw;
   border: 0.2vw solid #000000;
   box-shadow: 0px 0px 100vw rgb(0, 0, 150);
   top: 50vh;
@@ -25,10 +25,10 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
   border-radius: 0.3vw;
+  border: 0.1vw solid #000000;
 }
 
-/* Set a style for all buttons */
-button {
+.login-button {
   background-color: #1c3bc8;
   color: white;
   padding: 14px 20px;
@@ -36,11 +36,23 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 0.3vw;
+  border: 0.1vw solid #000000;
+}
+.registeren-button {
+  background-color: #1c3bc8;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0.3vw;
+  border: 0.1vw solid #000000;
 }
 
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
+.login-registeren-button:hover {
+  background-color: #1f1cc8;
 }
 
 #h2{
