@@ -1,6 +1,6 @@
 <?php
-// 1. DIT STUK PHP HEEFT GEEN HTML EN MOET HELEMAAL BOVENAAN STAAN
-$melding = ""; // Hierin slaan we op of het gelukt is
+
+$melding = ""; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $_POST['username'];
@@ -29,32 +29,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Registreren</title>
-    <link rel="stylesheet" href="style.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title> <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="login-reg-container" class="registeren">
         <h2 id="h2">Registreren</h2>
         
         <!-- Hier tonen we de melding als iemand zich registreert -->
         <?php echo $melding; ?>
 
-        <!-- Let op: action stuurt nu naar register.php zelf -->
         <form action="register.php" method="POST" id="regForm">
             <label id="label">E-mail:</label>
-            <input type="email" name="email" required>
+            <input type="email" name="email" placeholder="naam@voorbeeld.nl" autocomplete="email" required>
 
             <label id="label">Username:</label>
-            <input type="text" name="username" required>
+            <input type="text" name="username" placeholder="Vul je gebruikersnaam in" maxlength="100" autocomplete="username" required>
 
             <label id="label">Password:</label>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="password" id="password" placeholder="Minimaal 8 tekens" minlength="8" autocomplete="new-password" required>
 
-            <button type="submit" class="registeren-button">Registreren</button>
+            <label id="text" for="confirm_password">Herhaal wachtwoord:</label>
+            <input id="confirm_password" name="confirm_password" type="password" placeholder="Herhaal je wachtwoord" minlength="8" autocomplete="new-password" required>
+
+            <button type="submit" class="login-button">Account aanmaken</button>
         </form>
         <p class="tekst-link">Already have an account? <a href="login.php" class="link">Login here</a></p>
     </div>
