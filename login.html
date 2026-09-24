@@ -12,6 +12,7 @@
 
   <div class="container">
     <h2 id="h2">Inloggen</h2>
+    <p id="registration-message" class="form-message" role="status" hidden>Je hebt een account aangemaakt.</p>
     <label id="text" for="uname"><b>Username:</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -29,6 +30,10 @@
 
   </div>
   </div>
-  <script src="javascript.js"></script>
+  <script>
+    if (new URLSearchParams(window.location.search).get('registered') === '1') {
+      document.getElementById('registration-message').hidden = false;
+    }
+  </script>
 </body>
 </html>

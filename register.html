@@ -1,33 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title> <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registreren</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="login-reg-container" class="registeren">
-      <div class="imgcontainer">
-  </div>
+  <main id="login-reg-container" class="registeren">
+    <h1 id="h2">Registreren</h1>
 
-    <div id="container">
-        <h2 id="h2">Registreren</h2>
+    <form action="code.php" method="post">
+      <label id="text" for="name">Gebruikersnaam:</label>
+      <input id="name" name="name" type="text" placeholder="Vul je gebruikersnaam in" maxlength="100" autocomplete="username" required>
 
-        <label id="text" for="e-mail"><b>E-mail:</b></label>
-        <input type="text" placeholder="Enter E-mail" required>
+      <label id="text" for="email">E-mailadres:</label>
+      <input id="email" name="email" type="email" placeholder="naam@voorbeeld.nl" autocomplete="email" required>
 
-        <label id="text" for="Username"><b>Username:</b></label>
-        <input type="text" placeholder="Enter Username" required> 
+      <label id="text" for="password">Wachtwoord:</label>
+      <input id="password" name="password" type="password" placeholder="Minimaal 8 tekens" minlength="8" autocomplete="new-password" required>
 
-        <label id="text" for="password"><b>Password:</b></label>
-        <input type="password" placeholder="Enter Password" required>
+      <label id="text" for="confirm_password">Herhaal wachtwoord:</label>
+      <input id="confirm_password" name="confirm_password" type="password" placeholder="Herhaal je wachtwoord" minlength="8" autocomplete="new-password" required>
 
-        <label id="text" for="password"><b>Repeat Password:</b></label>
-        <input type="password" placeholder="Repeat Password" required>
+      <button class="login-button" type="submit">Account aanmaken</button>
+    </form>
+  </main>
+  <script>
+    const password = document.getElementById('password');
+    const confirmation = document.getElementById('confirm_password');
 
-        <button class="registeren-button" type="submit">Registreren</button>
-        <p class="tekst-link">already have a account? <a href="login.html" class="link">login here</a>
-    </div>
-    <script src="javascript.js"></script>
+    function checkPasswords() {
+      confirmation.setCustomValidity(
+        confirmation.value && confirmation.value !== password.value
+          ? 'De wachtwoorden zijn niet hetzelfde.'
+          : ''
+      );
+    }
+
+    password.addEventListener('input', checkPasswords);
+    confirmation.addEventListener('input', checkPasswords);
+  </script>
 </body>
 </html>
