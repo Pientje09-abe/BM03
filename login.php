@@ -46,8 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
     <div id="login-reg-container" class="login">
-        <h2 id="h2">Inloggen</h2>
-        
+        <h2 id="h2">Inloggen</h2>    
         <?php echo $melding; ?>
 
         <form action="login.php" method="POST">
