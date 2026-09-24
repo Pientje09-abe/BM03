@@ -75,9 +75,8 @@ input[type=text], input[type=password] {
   color: white;
 }
 .link{
-  color: rgb(0, 0, 255);
+  color: rgb(255, 0, 0);
   text-decoration: none;
-  -webkit-text-stroke: 0.03vw rgb(6, 0, 69);
 }
 .tekst-link{
   color: white;
