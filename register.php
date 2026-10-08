@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login</title> <link rel="stylesheet" href="style.css">
+  <title>login</title> <link rel="stylesheet" href="css.css">
 </head>
 <body>
     <div id="login-reg-container" class="registeren">
@@ -43,19 +43,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php echo $melding; ?>
 
         <form action="register.php" method="POST" id="regForm">
-            <label id="label">E-mail:</label>
-            <input type="email" name="email" placeholder="naam@voorbeeld.nl" autocomplete="email" required>
+            <label id="label">Email:</label>
+            <input type="email" name="email" placeholder="Name@example.com" autocomplete="email" required>
 
             <label id="label">Username:</label>
-            <input type="text" name="username" placeholder="Vul je gebruikersnaam in" maxlength="100" autocomplete="username" required>
+            <input type="text" name="username" placeholder="Enter your username" maxlength="100" autocomplete="username" required>
 
             <label id="label">Password:</label>
             <input type="password" name="password" id="password" placeholder="Minimaal 8 tekens" minlength="8" autocomplete="new-password" required>
 
             <label id="text" for="confirm_password">Herhaal wachtwoord:</label>
-            <input id="confirm_password" name="confirm_password" type="password" placeholder="Herhaal je wachtwoord" minlength="8" autocomplete="new-password" required>
+            <input id="confirm_password" name="confirm_password" type="password" placeholder="repeat password" minlength="8" autocomplete="new-password" required>
 
-            <button type="submit" class="login-button">Account aanmaken</button>
+            <button type="submit" class="login-button">Create account</button>
         </form>
         <p class="tekst-link">Already have an account? <a href="login.php" class="link">Login here</a></p>
     </div>

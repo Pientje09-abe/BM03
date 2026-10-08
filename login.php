@@ -41,22 +41,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Inloggen</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="css.css"> 
 </head>
 <body>
 
     <div id="login-reg-container" class="login">
-        <h2 id="h2">Inloggen</h2>    
+        <h2 id="h2">Login
+        </h2>    
         <?php echo $melding; ?>
 
-        <form action="login.php" method="POST">
             <label id="label">Username:</label>
-            <input type="text" name="username" required>
+            <input type="text" name="username" placeholder="Enter your username
+" maxlength="100" autocomplete="username" required>
 
             <label id="label">Password:</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" id="password" placeholder="Enter your password" minlength="8" required>
 
-            <button type="submit" class="login-button">Login</button>
+            <button type="submit" class="login-button">login</button>
         </form>
         <p class="tekst-link">Don't have an account? <a href="register.php" class="link">Register here</a></p>
     </div>

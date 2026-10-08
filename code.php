@@ -47,7 +47,7 @@ function escape(string $value): string
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registratie resultaat</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
     <main id="login-reg-container" class="registeren">
