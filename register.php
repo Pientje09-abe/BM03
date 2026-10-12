@@ -60,6 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="tekst-link">Already have an account? <a href="login.php" class="link">Login here</a></p>
     </div>
 
+    
+
     <script>
     // Jouw JavaScript voor de wachtwoordcontrole
     document.getElementById('regForm').addEventListener('submit', function(event) {

@@ -1,5 +1,5 @@
 <?php
-// DIT MOET HELEMAAL BOVENAAN STAAN IN login.php
+
 $melding = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
