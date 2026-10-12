@@ -40,8 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Inloggen</title>
-    <link rel="stylesheet" href="css.css"> 
+    <title>Inloggen</title> <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
