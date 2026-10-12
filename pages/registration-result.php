@@ -11,28 +11,28 @@ $isPost = ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST';
 if (!$isPost) {
     http_response_code(405);
     header('Allow: POST');
-    $errors[] = 'Dit formulier kan alleen worden verzonden via de registratiepagina.';
+    $errors[] = 'This form can only be submitted from the registration page.';
 } else {
     if ($name === '' || strlen($name) > 100) {
-        $errors[] = 'Vul een naam in van maximaal 100 tekens.';
+        $errors[] = 'Enter a name with no more than 100 characters.';
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Vul een geldig e-mailadres in.';
+        $errors[] = 'Enter a valid email address.';
     }
 
     if (strlen($password) < 8) {
-        $errors[] = 'Kies een wachtwoord van minimaal 8 tekens.';
+        $errors[] = 'Choose a password with at least 8 characters.';
     }
 
     if ($password !== $confirmPassword) {
-        $errors[] = 'De wachtwoorden komen niet overeen.';
+        $errors[] = 'The passwords do not match.';
     }
 
 }
 
 if ($isPost && !$errors) {
-    header('Location: login.html?registered=1');
+    header('Location: login.php?registered=1');
     exit;
 }
 
@@ -42,20 +42,20 @@ function escape(string $value): string
 }
 ?>
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registratie resultaat</title>
-    <link rel="stylesheet" href="css.css">
+    <title>Registration Result</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <main id="login-reg-container" class="registeren">
-        <h1 id="h2">Registratie</h1>
+    <main id="login-reg-container" class="register">
+        <h1 id="h2">Registration</h1>
 
         <?php if ($errors): ?>
             <div class="form-message" role="alert">
-                <p>Controleer de volgende gegevens:</p>
+                <p>Please check the following details:</p>
                 <ul>
                     <?php foreach ($errors as $error): ?>
                         <li><?= escape($error) ?></li>
@@ -64,11 +64,11 @@ function escape(string $value): string
             </div>
         <?php else: ?>
             <p class="form-message" role="status">
-                De ingevulde gegevens zijn geldig. Er is nog geen account opgeslagen; daarvoor is een databasekoppeling nodig.
+                The details you entered are valid. No account has been saved yet; a database connection is required.
             </p>
         <?php endif; ?>
 
-        <p><a class="link" href="register.html">Terug naar registreren</a></p>
+        <p><a class="link" href="register.php">Back to registration</a></p>
     </main>
 </body>
 </html>
