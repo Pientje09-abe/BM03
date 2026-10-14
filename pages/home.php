@@ -15,10 +15,15 @@ $username = htmlspecialchars((string) $_SESSION['username'], ENT_QUOTES | ENT_SU
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Maze Escape Room</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=<?= filemtime(__DIR__ . '/../assets/css/style.css') ?>">
 </head>
 <body>
     <img class="img1" src="../assets/images/maze.png" alt="Maze">
-    <p class="text-link">Signed in as <?= $username ?>. <a class="link" href="logout.php">Sign out</a></p>
+    <div class="account-controls">
+        <p class="signed-in-text">Signed in as <?= $username ?>.</p>
+        <form class="logout-form" action="logout.php" method="post">
+            <button class="logout-button" type="submit">Sign out</button>
+        </form>
+    </div>
 </body>
 </html>

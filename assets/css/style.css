@@ -91,6 +91,46 @@ input[type="checkbox"] {
   text-align: center;
 }
 
+.account-controls {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100vw - 50px);
+}
+
+.signed-in-text {
+  margin: 0;
+  color: white;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.logout-form {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.logout-button {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 16px;
+  border: 1px solid #111;
+  border-radius: 5px;
+  background: #0026d2;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: #002fff;
+}
+
 .form-message {
   line-height: 1.5;
 }
@@ -101,26 +141,4 @@ top: 20px;
 left: 20px;
 width: 120px;
 height: auto;
-}
-
-.account-links {
-position: absolute;
-top: 25px;
-right: 25px;
-display: flex;
-gap: 10px;
-}
-
-.account-links a {
-color: white;
-text-decoration: none;
-border: 1px solid white;
-padding: 10px 15px;
-font-size: 16px;
-font-weight: bold;
-}
-
-.account-links a:hover {
-color: #d4af37;
-border-color: #d4af37;
 }
