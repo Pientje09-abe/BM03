@@ -25,5 +25,6 @@ $username = htmlspecialchars((string) $_SESSION['username'], ENT_QUOTES | ENT_SU
             <button class="logout-button" type="submit">Sign out</button>
         </form>
     </div>
+    <a href=""><button class="mooi">Play</button></a>
 </body>
 </html>
