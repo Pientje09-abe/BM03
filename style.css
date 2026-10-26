@@ -87,8 +87,9 @@ input[type="checkbox"] {
 }
 
 .text-link {
-  color: rgb(255, 255, 255);
+  color: white;
   text-align: center;
+
 }
 
 .account-controls {
