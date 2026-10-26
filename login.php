@@ -66,5 +66,6 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         <p class="text-link">Don't have an account? <a href="register.php" class="link">Register here</a></p>
     </div>
 
+    
 </body>
 </html>
