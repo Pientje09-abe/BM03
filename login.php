@@ -43,28 +43,40 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
 </head>
-<body>
+<body class="auth-page auth-page--login">
+    <main class="auth-layout">
+        <section class="auth-card" aria-labelledby="auth-title">
+            <div class="auth-card-heading">
+                
+                <h1 class="auth-title" id="auth-title">Welcome</h1>
+                <p class="auth-subtitle">Sign in to continue your escape room adventure.</p>
+            </div>
 
-    <div id="login-reg-container" class="login">
-        <h2 id="h2">Sign In</h2>
-        <?php if ($message !== ''): ?>
-            <p class="form-message" role="alert"><?= htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></p>
-        <?php endif; ?>
+            <?php if ($message !== ''): ?>
+                <p class="form-message" role="alert"><?= htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></p>
+            <?php endif; ?>
 
-        <form action="login.php" method="POST">
-            <label id="text" for="username">Username:</label>
-            <input type="text" name="username" id="username" placeholder="Enter your username" maxlength="100" autocomplete="username" required>
+            <form class="auth-form" action="login.php" method="POST" id="loginForm">
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter your username" maxlength="100" autocomplete="username" required>
+                </div>
 
-            <label id="text" for="password">Password:</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password" autocomplete="current-password" required>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" autocomplete="current-password" required>
+                </div>
 
-            <button type="submit" class="login-button">Sign In</button>
-        </form>
-        <p class="text-link">Don't have an account? <a href="register.php" class="link">Register here</a></p>
-    </div>
-
+                <button type="submit" class="login-button">Sign in <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="text-link">New to the maze? <a href="register.php" class="link">Create an account</a></p>
+            <p class="auth-footnote"><span aria-hidden="true">◇</span> Your next clue is just around the corner.</p>
+        </section>
+    </main>
+    <script src="auth-transitions.js?v=<?= filemtime(__DIR__ . '/auth-transitions.js') ?>"></script>
 </body>
 </html>
