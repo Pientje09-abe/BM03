@@ -17,7 +17,7 @@ $username = htmlspecialchars((string) $_SESSION['username'], ENT_QUOTES | ENT_SU
     <title>Home - Maze Escape Room</title>
     <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
 </head>
-<body>
+<body class="home-page">
     <img class="img1" src="maze.png" alt="Maze">
     <div class="account-controls">
         <p class="signed-in-text">Signed in as <?= $username ?>.</p>
