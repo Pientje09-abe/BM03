@@ -18,7 +18,8 @@ $username = htmlspecialchars((string) $_SESSION['username'], ENT_QUOTES | ENT_SU
     <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
 </head>
 <body class="home-page">
-    <img class="img1" src="maze.png" alt="Maze">
+    <a href="game.js" class="gamebutton">
+    <span class="play-icon"></span></a>
     <div class="account-controls">
         <p class="signed-in-text">Signed in as <?= $username ?>.</p>
         <form class="logout-form" action="logout.php" method="post">

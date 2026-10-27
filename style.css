@@ -333,7 +333,7 @@ body.auth-page--leaving .auth-layout {
   padding: 12px 16px;
   border: 1px solid #111;
   border-radius: 5px;
-  background: #0026d2;
+  background: #d20000;
   color: #fff;
   font: inherit;
   cursor: pointer;
@@ -377,4 +377,43 @@ body.home-page {
   body.home-page {
     animation-duration: 150ms;
   }
+}
+
+.gamebutton{
+    width: 100px;
+    height: 100px;
+    background: #100609;
+    border: 2px solid #ff1738;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.laser-play::before {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid #ff1738;
+
+}
+
+.play-icon {
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 25px solid #ff294b;
+    margin-left: 6px;
+
+    filter: drop-shadow(0 0 6px #ff1738)
+            drop-shadow(0 0 12px #ff1738);
+}
+
+.gamebutton:hover {
+    transform: scale(0.95);
+    box-shadow:
+        0 0 12px #ff1744,
+        0 0 25px #ff1744,
+        0 0 45px #ff174488;
 }
